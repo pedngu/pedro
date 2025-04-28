@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -41,11 +42,11 @@
             padding: 100px 20px 20px;
             min-height: 100vh;
         }
-        .container {
+        .container, .grid, .card, .profile, .hobby, .hobby-list {
             margin: auto;
             max-width: 1200px;
         }
-        .card, .section { /* Đã bỏ .container ra */
+        .card, .section, .container {
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
@@ -106,12 +107,6 @@
             max-width: 200px;
             text-align: center;
         }
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
     </style>
 </head>
 <body>
@@ -129,7 +124,7 @@
     <!-- Section: Giới thiệu bản thân -->
     <section id="ve-toi">
         <div class="container profile" style="text-align: center;">
-            <img src="gg.jpg" alt="Ảnh đại diện" onclick="redirectToFacebook()" onerror="this.style.display='none';">
+            <img src="gg.jpg" alt="Ảnh đại diện" onclick="redirectToFacebook()">
             <div class="tooltip">Nhấn vào để tới trang Facebook :))</div>
             <h2>Giới thiệu về bản thân</h2>
             <p>Xin chào! Tôi là Cao Tuấn Đạt, một người yêu thích công nghệ và bóng đá.</p>
@@ -137,15 +132,15 @@
             <h2>Sở thích cá nhân</h2>
             <div class="hobby-list">
                 <div class="hobby">
-                    <img src="bb.jpg" alt="Chơi bóng đá" onerror="this.style.display='none';">
+                    <img src="bb.jpg" alt="Chơi bóng đá">
                     <p>Chơi bóng đá và theo dõi các trận đấu hấp dẫn.</p>
                 </div>
                 <div class="hobby">
-                    <img src="web.jpg" alt="Lập trình web" onerror="this.style.display='none';">
+                    <img src="web.jpg" alt="Lập trình web">
                     <p>Lập trình và tìm hiểu về thiết kế web.</p>
                 </div>
                 <div class="hobby">
-                    <img src="game.jpg" alt="Chơi game" onerror="this.style.display='none';">
+                    <img src="game.jpg" alt="Chơi game">
                     <p>Chơi game và đi du lịch.</p>
                 </div>
             </div>
@@ -156,19 +151,19 @@
     <section id="ve-bong-da">
         <div class="container">
             <div class="section">
-                <img src="vn.jpg" alt="Khoảnh khắc bóng đá" onerror="this.style.display='none';">
+                <img src="vn.jpg" alt="Khoảnh khắc bóng đá">
             </div>
 
             <h2>Các Trận Đấu Đáng Nhớ</h2>
             <div class="grid">
                 <div class="card">
                     <h3>World Cup 2018</h3>
-                    <img src="wc.jpg" alt="World Cup 2018" onerror="this.style.display='none';">
+                    <img src="wc.jpg" alt="World Cup 2018">
                     <p>Trận chung kết World Cup 2018 giữa Pháp và Croatia.</p>
                 </div>
                 <div class="card">
                     <h3>Champions League 2018</h3>
-                    <img src="c1.jpg" alt="Champions League 2018" onerror="this.style.display='none';">
+                    <img src="c1.jpg" alt="Champions League 2018">
                     <p>Trận chung kết giữa Real Madrid và Liverpool.</p>
                 </div>
             </div>
@@ -177,19 +172,19 @@
             <div class="grid">
                 <div class="card">
                     <h3>Về đội bóng</h3>
-                    <img src="re.jpeg" alt="Real Madrid" onerror="this.style.display='none';">
+                    <img src="re.jpeg" alt="Real Madrid">
                     <p>Real Madrid là một trong những CLB vĩ đại nhất thế giới.</p>
                 </div>
                 <div class="card">
                     <h3>Lối chơi</h3>
-                    <img src="m.jpg" alt="Lối chơi Real Madrid" onerror="this.style.display='none';">
+                    <img src="m.jpg" alt="Lối chơi Real Madrid">
                     <p>Real Madrid luôn được biết đến với lối chơi tấn công.</p>
                 </div>
             </div>
 
             <h2>Luyện tập</h2>
             <div class="section">
-                <img src="t.jpg" alt="Luyện tập" onerror="this.style.display='none';">
+                <img src="t.jpg" alt="Luyện tập">
                 <p>Chế độ luyện tập nghiêm ngặt giúp cầu thủ duy trì phong độ.</p>
             </div>
         </div>
@@ -201,29 +196,65 @@
             <div class="grid">
                 <div class="card">
                     <h3>Vô địch</h3>
-                    <img src="c1.jpg" alt="Vô địch" onerror="this.style.display='none';">
+                    <img src="c1.jpg" alt="Vô địch">
                     <p>Real Madrid đã giành 14 danh hiệu Champions League...</p>
                 </div>
                 <div class="card">
                     <h3>Tiền Vệ Hay Nhất</h3>
-                    <img src="mck.jpg" alt="Tiền Vệ Hay Nhất" onerror="this.style.display='none';">
+                    <img src="mck.jpg" alt="Tiền Vệ Hay Nhất">
                     <p>Luka Modrić - Quả bóng Vàng 2018, nhạc trưởng của Real Madrid...</p>
                 </div>
                 <div class="card">
                     <h3>Cầu Thủ Đắt Giá Nhất</h3>
-                    <img src="tt.jpg" alt="Cầu Thủ Đắt Giá Nhất" onerror="this.style.display='none';">
+                    <img src="tt.jpg" alt="Cầu Thủ Đắt Giá Nhất">
                     <p>Những thương vụ đắt giá nhất trong lịch sử của Real Madrid...</p>
                 </div>
                 <div class="card">
                     <h3>Tiền Đạo Xuất Sắc Nhất</h3>
-                    <img src="bbc.jpg" alt="Tiền Đạo Xuất Sắc Nhất" onerror="this.style.display='none';">
+                    <img src="bbc.jpg" alt="Tiền Đạo Xuất Sắc Nhất">
                     <p>Cristiano Ronaldo - cầu thủ ghi nhiều bàn nhất lịch sử Real Madrid...</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Các phần còn lại giữ nguyên -->
+    <!-- Section: Các CLB Hàng Đầu -->
+    <section id="cac-clb">
+        <div class="container grid">
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/c/c7/Logo_Real_Madrid.svg/79px-Logo_Real_Madrid.svg.png" alt="Real Madrid">
+                <h3>Real Madrid</h3>
+                <p>CLB thành công nhất Champions League với 14 danh hiệu.</p>
+                <video autoplay loop muted playsinline>
+                    <source src="RMA.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/9/91/FC_Barcelona_logo.svg/1200px-FC_Barcelona_logo.svg.png" alt="Barcelona">
+                <h3>Barcelona</h3>
+                <p>Đội bóng với triết lý tiki-taka và nhiều danh hiệu La Liga.</p>
+                <video autoplay loop muted playsinline>
+                    <source src="BC.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/512px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png" alt="Bayern Munich">
+                <h3>Bayern Munich</h3>
+                <p>Gã khổng lồ nước Đức với nhiều chức vô địch Bundesliga.</p>
+                <video autoplay loop muted playsinline>
+                    <source src="BM.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/1/1d/Manchester_City_FC_logo.svg/190px-Manchester_City_FC_logo.svg.png" alt="Manchester City">
+                <h3>Manchester City</h3>
+                <p>Đội bóng thống trị Ngoại Hạng Anh trong những năm gần đây.</p>
+                <video autoplay loop muted playsinline>
+                    <source src="MC.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
 
     <script>
         function redirectToFacebook() {
@@ -231,7 +262,8 @@
         }
 
         document.addEventListener("DOMContentLoaded", function () {
-            const elements = document.querySelectorAll(".card, .section");
+            document.body.style.opacity = "1";
+            const elements = document.querySelectorAll(".card, .section, .container");
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
