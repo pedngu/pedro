@@ -45,7 +45,7 @@
             margin: auto;
             max-width: 1200px;
         }
-        .card, .section {
+        .card, .section { /* Đã bỏ .container ra */
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
@@ -105,6 +105,12 @@
         .hobby {
             max-width: 200px;
             text-align: center;
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
         }
     </style>
 </head>
@@ -217,12 +223,7 @@
         </div>
     </section>
 
-    <!-- Section: Các CLB Hàng Đầu -->
-    <section id="cac-clb">
-        <div class="container grid">
-            <!-- Các card CLB vẫn như cũ -->
-        </div>
-    </section>
+    <!-- Các phần còn lại giữ nguyên -->
 
     <script>
         function redirectToFacebook() {
