@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu bản thân</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(51, 51, 51, 0.8);
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #555;
+            border-radius: 10px;
+        }
+
+        .container {
+            margin-top: 100px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s, transform 0.6s;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+        }
+        .container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .profile {
+            position: relative;
+            display: inline-block;
+        }
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            border: 4px solid white;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+        }
+        .profile img:hover {
+            transform: scale(1.15);
+        }
+        
+        .tooltip {
+            visibility: hidden;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 8px 12px;
+            border-radius: 5px;
+            position: absolute;
+            top: 50%;
+            left: 105%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .profile:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .hobby-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .hobby {
+            max-width: 200px;
+            transition: transform 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+        }
+        .hobby img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .hobby:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">⚽ Giới thiệu về bản thân</a>
+        <div>
+            <a href="trang chủ.html">Về Tôi</a>
+            <a href="đá bóng.html">Về Bóng Đá</a>
+            <a href="thành tích.html">Các Thành Tích</a>
+            <a href="CLB.html">Các CLB Hàng Đầu Thế Giới</a>
+        </div>
+    </div>
+    
+    <div class="container" id="content">
+        <div class="profile">
+            <img src="gg.jpg" alt="Ảnh đại diện" onclick="redirectToFacebook()">
+            <div class="tooltip">Nhấn vào để tới trang Facebook :))</div>
+            <h2>Giới thiệu về bản thân</h2>
+            <p>Xin chào! Tôi là Cao Tuấn Đạt, một người yêu thích công nghệ và bóng đá.</p>
+        </div>
+        
+        <div class="hobbies">
+            <h2>Sở thích cá nhân</h2>
+            <div class="hobby-list">
+                <div class="hobby">
+                    <img src="bb.jpg" alt="Chơi bóng đá">
+                    <p>Chơi bóng đá và theo dõi các trận đấu hấp dẫn.</p>
+                </div>
+                <div class="hobby">
+                    <img src="web.jpg" alt="Lập trình web">
+                    <p>Lập trình và tìm hiểu về thiết kế web.</p>
+                </div>
+                <div class="hobby">
+                    <img src="game.jpg" alt="Chơi game">
+                    <p>Chơi game và đi du lịch.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(() => {
+                document.getElementById("content").classList.add("show");
+            }, 300);
+        });
+
+        function redirectToFacebook() {
+            window.location.href = "https://www.facebook.com/pedrogm209";
+        }
+    </script>
+</body>
+</html>

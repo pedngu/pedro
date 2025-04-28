@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Các Câu Lạc Bộ Hàng Đầu Thế Giới</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #3a3a3a);
+            color: white;
+            margin: 0;
+            padding: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(51, 51, 51, 0.8);
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            transition: background 0.3s;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #555;
+            border-radius: 10px;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 100px 20px 20px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s, transform 0.8s;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        
+        .card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .card img:hover {
+            transform: scale(1.1);
+        }
+        
+        .card video {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+            autoplay: true;
+            loop: true;
+            muted: true;
+            playsinline: true;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <span>⚽ Các Câu Lạc Bộ Hàng Đầu Thế Giới</span>
+        <div>
+              <a href="trang chủ.html">Về Tôi</a>
+            <a href="đá bóng.html">Về Bóng Đá</a>
+            <a href="thành tích.html">Các Thành Tích</a>
+            <a href="CLB.html">Các CLB Hàng Đầu Thế Giới</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/c/c7/Logo_Real_Madrid.svg/79px-Logo_Real_Madrid.svg.png?20080607135911" alt="Real Madrid">
+            <h3>Real Madrid</h3>
+            <p>CLB thành công nhất Champions League với 14 danh hiệu.</p>
+            <video autoplay loop muted playsinline>
+                <source src="RMA.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/9/91/FC_Barcelona_logo.svg/1200px-FC_Barcelona_logo.svg.png" alt="Barcelona">
+            <h3>Barcelona</h3>
+            <p>Đội bóng với triết lý tiki-taka và nhiều danh hiệu La Liga.</p>
+            <video autoplay loop muted playsinline>
+                <source src="BC.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/512px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png" alt="Bayern Munich">
+            <h3>Bayern Munich</h3>
+            <p>Gã khổng lồ nước Đức với nhiều chức vô địch Bundesliga.</p>
+            <video autoplay loop muted playsinline>
+                <source src="BM.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/1/1d/Manchester_City_FC_logo.svg/190px-Manchester_City_FC_logo.svg.png" alt="Manchester City">
+            <h3>Manchester City</h3>
+            <p>Đội bóng thống trị Ngoại Hạng Anh trong những năm gần đây.</p>
+            <video autoplay loop muted playsinline>
+                <source src="MC.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.style.opacity = "1";
+            const cards = document.querySelectorAll(".card");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("fade-in");
+                    }
+                });
+            }, { threshold: 0.3 });
+            cards.forEach(card => observer.observe(card));
+        });
+    </script>
+</body>
+</html>
